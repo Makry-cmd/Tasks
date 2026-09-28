@@ -9,7 +9,6 @@ public class main {
         System.out.println("Начинаем сбор данных о товаре 'Ноутбук'...");
         long startTime = System.currentTimeMillis();
 
-        // Метод сам дождётся результата внутри — блокирует главный поток
         ProductInfo product = aggregator.aggregateProductInfo("Ноутбук");
 
         long endTime = System.currentTimeMillis();
