@@ -4,7 +4,6 @@ public class ConcurrentBankExample {
     public static void main(String[] args) {
         ConcurrentBank bank = new ConcurrentBank();
 
-        // Создание счетов
         BankAccount account1 = bank.createAccount(1000);
         BankAccount account2 = bank.createAccount(500);
 
@@ -12,7 +11,7 @@ public class ConcurrentBankExample {
         System.out.println("Баланс счетов до операций:");
         System.out.println(account1);
         System.out.println(account2);
-        // Перевод между счетами
+        
         Thread transferThread1 = new Thread(() -> bank.transfer(account1, account2, 200));
         Thread transferThread2 = new Thread(() -> bank.transfer(account2, account1, 100));
 
@@ -31,7 +30,6 @@ public class ConcurrentBankExample {
         System.out.println(account1);
         System.out.println(account2);
 
-        // Вывод общего баланса
         System.out.println("Total balance: " + bank.getTotalBalance());
     }
 }
