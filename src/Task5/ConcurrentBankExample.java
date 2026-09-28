@@ -11,7 +11,7 @@ public class ConcurrentBankExample {
         System.out.println("Баланс счетов до операций:");
         System.out.println(account1);
         System.out.println(account2);
-        
+
         Thread transferThread1 = new Thread(() -> bank.transfer(account1, account2, 200));
         Thread transferThread2 = new Thread(() -> bank.transfer(account2, account1, 100));
 
